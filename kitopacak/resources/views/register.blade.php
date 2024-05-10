@@ -1,1 +1,5 @@
-<h1>Register<h1>
+@extends('layout.master')
+
+@section('content')
+    <h1>Register</h1>
+@endsection
