@@ -71,4 +71,4 @@ Route::post("prodi/store", [ProdiController::class, "store"])
 Route::get("/prodi/index", [ProdiController::class, 'index'])
     ->name("prodi.index");
 Route::get("/prodi/{id}", [ProdiController::class, 'show'])
-    ->name("prodi.show");
+    ->name("prodi.show"); 
