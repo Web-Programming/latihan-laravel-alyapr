@@ -12,14 +12,15 @@
                 <tr>
                     <th>No</th>
                     <th>Nama</th>
-                    <th>Aksi</th>
+                    <th>Prodi</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($listprodi as $item)
+                @foreach ($allmahasiswaprodi as $item)
                 <tr>
-                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $item->npm }}</td>
                     <td>{{ $item->nama }}</td>
+                    <td>{{ $item->nama_prodi }}</td>
                     <td>
                         <a href="{{ url('/prodi/'.$item->id) }}" class="btn btn-warning">
                             Detail
