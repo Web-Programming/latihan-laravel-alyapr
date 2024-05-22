@@ -4,6 +4,11 @@
 @section('content')
     <div class="container">
         <h1>Data List Prodi</h1>
+        @if (session()->has('info'))
+            <div class="alert alert-success">
+            {{ session()->get('info') }}
+            </div>
+        @endif
         <a href="{{ route('prodi.create') }}" class="btn btn-success">
             Tambah Prodi
         </a>
@@ -12,19 +17,28 @@
                 <tr>
                     <th>No</th>
                     <th>Nama</th>
-                    <th>Prodi</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($allmahasiswaprodi as $item)
+                @foreach ($listprodi as $item)
                 <tr>
-                    <td>{{ $item->npm }}</td>
+                    <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->nama }}</td>
-                    <td>{{ $item->nama_prodi }}</td>
                     <td>
-                        <a href="{{ url('/prodi/'.$item->id) }}" class="btn btn-warning">
-                            Detail
-                        </a>
+                        <form action="{{ route('prodi.destroy', ["prodi" => $item->id]) }}" method="POST">
+                            @method("DELETE")
+                            @csrf
+                            <a href="{{ url('/prodi/'.$item->id) }}" class="btn btn-warning">
+                                Detail
+                            </a>
+                            <a href="{{ route('prodi.edit', [$item->id]) }}" class="btn btn-info">
+                                Edit
+                            </a>
+                            <button class="btn btn-danger" type="submit">
+                            Hapus
+                            </button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
