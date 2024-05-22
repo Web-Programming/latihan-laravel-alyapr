@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kurikulum;
+use App\Models\Kota;
 use Illuminate\Http\Request;
 
-class KurikulumController extends Controller
+class KotaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class KurikulumController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Kurikulum $kurikulum)
+    public function show(Kota $kota)
     {
         //
     }
@@ -42,7 +42,7 @@ class KurikulumController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Kurikulum $kurikulum)
+    public function edit(Kota $kota)
     {
         //
     }
@@ -50,7 +50,7 @@ class KurikulumController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Kurikulum $kurikulum)
+    public function update(Request $request, Kota $kota)
     {
         //
     }
@@ -58,7 +58,7 @@ class KurikulumController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Kurikulum $kurikulum)
+    public function destroy(Kota $kota)
     {
         //
     }

@@ -1,9 +1,11 @@
+{{-- @include('layouts.header') --}}
 @extends('layouts.master')
 
-@section('title', 'Selamat Datang')
+{{-- @section('title', 'Universitas MDP') --}}
 @section('content')
     <h1>Fakultas</h1>
-    @foreach($fakultas as $item)
-    <li> {{ $item }} </li>
-    @endforeach
+    <li>{{ $ilkom }}</li>
+    <li>{{ $feb }}</li>
 @endsection
+
+{{--@include('layouts.footer') --}}

@@ -1,24 +1,22 @@
-@extends('layouts.master')
+@extends ('layouts.master')
+@section('content') 
+    <h1>Tambah Program Studi</h1>
+    @if(session()->has('info'))
+        <div class="alert alert-sucess">
+            {{session()->get('info')}}
+        </div>
+    @endif
+    <form method="POST" action="{{url('prodi/store')}}">
+        @csrf
+        <div class="form-group">
+            <label> Nama Prodi</label>
+            <input name ="nama"
+            class="form-control" type="text"
+            required minlength="5" value="{{old('nama')}}" maxlength="20">
+            @error('nama')
+                <div class="text-danger">
+                {{ $message }}</div>
+            @enderror
+        </div>
 
-@section('title', 'Form Data Prodi')
-@section('content')
-    <div class="container">
-        <h1>Form Prodi</h1>
-        @if (session()->has('info'))
-            <div class="alert alert-success">
-            {{ session()->get('info') }}
-            </div>
-        @endif
-        <form action="{{ url('prodi/store') }}" method="POST">
-            @csrf
-            <div class="form-group">
-                <label for="nama">Nama Prodi</label>
-                <input type="text" name="nama" id="nama" value="{{ old("nama") }}">
-                @error('nama')
-                    <div class="text-danger"> {{ $message }} </div>
-                @enderror
-            </div>
-            <button type="submit" class="btn btn-primary mt-2">Simpan</button>
-        </form>
-    </div>
-@endsection
+        <button type="submit" class="btn btn-primary">
